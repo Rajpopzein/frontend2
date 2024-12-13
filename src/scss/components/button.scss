@@ -1,0 +1,23 @@
+@use "../color_variables.scss" as var_color;
+
+button {
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 16px;
+}
+button.primary {
+  background-color: var_color.$button-primary;
+  color: var_color.$background-chat-window;
+  &:hover {
+    background-color: var_color.$button-primary-hover;
+  }
+}
+button.secondary {
+  background-color: var_color.$button-secondary;
+  color: var_color.$background-chat-window;
+  &:hover {
+    background-color: var_color.$button-secondary-hover;
+  }
+}

@@ -1,0 +1,75 @@
+@use "../../color_variables.scss" as color_variables;
+
+.chat-main {
+  background-color: color_variables.$background-main;
+  .chatLayout {
+    display: flex;
+    height: 100%;
+  }
+  .chat-body{
+    height: 100vh;
+    flex-direction: column;
+    .chat-info{
+      color: color_variables.$input-bg;
+      flex-direction: column;
+      margin-left: 1rem;
+      .username{
+        font-weight: 300;
+      }
+      .lastseen{
+        font-weight: 300;
+        font-size: small;
+      }
+    }
+    .chat-header{
+      height: 10%;
+      background-color: color_variables.$background-sidebar;
+      padding: 0.5rem;
+    }
+    .chat-content{
+      flex: 1;
+    }
+    .chat-footer{
+     height: 15%;
+     background-color: color_variables.$background-sidebar;
+     width: 75vw;
+     gap: 1rem;
+     padding: 1rem;
+     .search-chat{
+      background-color: color_variables.$input-bg;
+     }
+     .send-btn{
+      height: 70%;
+      padding: 0rem 1rem;
+      
+     }
+    }
+  }
+  .listofuser {
+    padding: 1rem;
+    width: 25%;
+    background-color: color_variables.$background-sidebar;
+    
+    .btn-selector{
+      margin-top: 1rem;
+      display: flex;
+      gap: 1rem;
+      button{
+        padding: 0.2rem !important;
+      }
+    }
+    // p{
+    //     color: color_variables.$background-main;
+    //     margin-bottom: 1rem;
+    // }
+    .list-user{
+        margin-top: 1.5rem;
+    }
+    height: 100vh;
+    .search-chat {
+      width: 100%;
+      color: color_variables.$text-primary;
+      background-color: color_variables.$input-bg;
+    }
+  }
+}

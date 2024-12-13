@@ -1,0 +1,12 @@
+@use "../../color_variables.scss" as color_variables;
+
+.nav-main {
+  width: 100%;
+  color: color_variables.$text-primary;
+  padding: 1rem;
+  p{
+    margin-left: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+}

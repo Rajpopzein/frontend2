@@ -1,0 +1,19 @@
+@use "../../color_variables.scss" as color_variables;
+
+.Chat-card-Body {
+  background-color: color_variables.$background-main;
+  gap: 0.9rem;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  h5{
+    font-weight: 600;
+    color: color_variables.$text-primary;
+  }
+  p{
+    color: color_variables.$text-secondary;
+    line-height: 1.5;
+    font-size: 0.8rem;
+  }
+ 
+}
+

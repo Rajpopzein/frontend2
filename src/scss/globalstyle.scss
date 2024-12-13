@@ -1,0 +1,24 @@
+@use "./color_variables.scss" as varcolor;
+
+body {
+  background-color: varcolor.$background-main;
+  color: varcolor.$text-primary;
+  font-family: Arial, sans-serif;
+  overflow: hidden !important;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  .flex {
+    display: flex;
+  };
+  .flex-dir-col {
+    flex-direction: column;
+  }
+  .flex-dir-row{
+    flex-direction: row;
+  }
+  .flex-1{
+    flex: 1;
+  }
+}
