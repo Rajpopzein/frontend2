@@ -4,8 +4,6 @@ import { lazy, Suspense } from "react";
 
 const Chat = lazy(() => import("./component/pages/ChatPage.jsx"));
 
-
-
 const Router = () => {
   const isAuthenticated = () => !!localStorage.getItem("token");
 
@@ -14,7 +12,7 @@ const Router = () => {
   };
 
   const PublicRoute = ({ children }) => {
-    return !isAuthenticated() ? children : <Navigate to="/dashboard" />;
+    return !isAuthenticated() ? children : <Navigate to="/chat" />;
   };
 
   return (
@@ -23,11 +21,10 @@ const Router = () => {
         path="/"
         element={
           <PublicRoute>
-            <h1>Home</h1>
+            <LoginPage />
           </PublicRoute>
         }
       />
-      <Route path="/login" element={<LoginPage />} />
       <Route
         path="/chat"
         element={

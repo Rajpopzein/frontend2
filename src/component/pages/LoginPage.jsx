@@ -8,11 +8,18 @@ import { FaUser } from "react-icons/fa";
 import { GiConfirmed } from "react-icons/gi";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import Alerts from "../component/Alert";
 
 const API_URL = import.meta.env.VITE_API_URL;
 const LoginPage = () => {
   const [activeLogin, setActiveLogin] = useState(true);
-  const navigate = useNavigate()
+  const [snackbar, setSnackbar] = useState({
+    open: false,
+    message: "",
+    severity: "",
+  });
+  const [opensnake, setOpensnake] = useState(false);
+  const navigate = useNavigate();
   const handleComponentChange = () => {
     setActiveLogin(!activeLogin);
   };
@@ -41,19 +48,34 @@ const LoginPage = () => {
   const handleSubmit = async (values) => {
     console.log("Form values:", values);
     try {
-      const logindata = await axios.post(`${API_URL}/auth/${activeLogin?"login":"register"}`, values);
-      if(!activeLogin){
-        navigate("/login");
+      const logindata = await axios.post(
+        `${API_URL}/auth/${activeLogin ? "login" : "register"}`,
+        values
+      );
+      if (activeLogin && logindata.status === 200) {
+        localStorage.setItem("token", logindata.data.token);
+        setOpensnake({
+          open: true,
+          message: "Login successfull",
+          severity: "success",
+        });
+      
+          navigate("/chat");
+      } else {
+        setActiveLogin(!activeLogin);
       }
-      localStorage.setItem("token", logindata.data.token);
-      navigate("/chat")
     } catch (e) {
-        console.log("error", e);
+      console.log("error", e);
     }
+  };
+
+  const handleSnackbarClose = () => {
+    setSnackbar({ open: false, message: "", severity: "" });
   };
 
   return (
     <div className="main-login">
+      <Alerts snackbars={opensnake} handleSnackbarClose={handleSnackbarClose} />
       <section className="text-section">
         <h1>WW</h1>
       </section>

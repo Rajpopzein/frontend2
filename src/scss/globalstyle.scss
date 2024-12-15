@@ -21,4 +21,10 @@ body {
   .flex-1{
     flex: 1;
   }
+  .space{
+    justify-content: space-between;
+  }
+  .a-center{
+    align-items: center;
+  }
 }

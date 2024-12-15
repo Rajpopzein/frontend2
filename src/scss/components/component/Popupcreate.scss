@@ -1,0 +1,30 @@
+@use "../../color_variables.scss" as color_variables;
+.popup-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .Model {
+    background-color: color_variables.$background-main;
+    padding: 1rem !important;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    h2{
+        font-weight: 600;
+        margin-bottom: 1rem;
+    }
+    .input-filed{
+        margin-bottom: 1rem;
+    }
+    .btn-sec{
+        display: flex;
+        gap: 1rem;
+    }
+    .flex{
+        display: flex;
+        flex-direction: column;
+    }
+  }
+}

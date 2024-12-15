@@ -7,11 +7,11 @@ import { BrowserRouter } from "react-router-dom";
 import { Provider } from "../src/components/ui/provider.jsx"
 
 createRoot(document.getElementById("root")).render(
-  <StrictMode>
+  // <StrictMode>
     <Provider>
       <BrowserRouter>
         <App />
       </BrowserRouter>
     </Provider>
-  </StrictMode>
+  // </StrictMode>
 );
